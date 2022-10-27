@@ -1,0 +1,27 @@
+.MainTable .custom-color button, .MainTable .custom-color button:hover {
+    background: linear-gradient(to right, #2b5876, #4e4376);
+    border-color: transparent;
+}
+
+.MainTable .custom-color-solid-2 button, .MainTable .custom-color-solid-2 button:hover {
+    background: #4e4376;
+    border-color: transparent;
+}
+
+.nav-pills .nav-link.active {
+    background: linear-gradient(to right, #2b5876, #4e4376);
+}
+
+.nav-pills .nav-link {
+    color: #2b5876;
+}
+
+table button.transparent, table button.transparent:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+table button.transparent.btn, table button.transparent.btn-primary {
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+}

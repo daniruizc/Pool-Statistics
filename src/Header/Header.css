@@ -1,0 +1,13 @@
+.header {
+    background: linear-gradient(to right, #2b5876, #4e4376);
+}
+
+.header button.transparent, .header button.transparent:hover {
+    background-color: #2b5876;
+    border-color: #d5d5d5;
+}
+
+button.transparent.btn, button.transparent.btn-primary {
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: transparent;
+}

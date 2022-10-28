@@ -39,7 +39,6 @@ class MainTable extends React.Component {
             whitelisted: [],
             blacklisted: [],
             tabSelected: this.defaultTab,
-            hover: {},
             checked: {},
             loading: false
         };
@@ -128,15 +127,6 @@ class MainTable extends React.Component {
         }
     }
 
-    toggleHover(event, icon, poolId, value) {
-        // There is only possible a 1 over item at a time
-        let obj = {};
-        obj[poolId] = {};
-        obj[poolId][icon] = value;
-        
-        this.setState({ hover: obj });
-    }
-
     async handleActionClick(event, action, poolId) {
 
         try {
@@ -214,7 +204,6 @@ class MainTable extends React.Component {
             allPools: [],
             whitelisted: [],
             blacklisted: [],
-            hover: {},
             checked: {},
             loading: false
         });
@@ -262,19 +251,9 @@ class MainTable extends React.Component {
                             onClick={event => this.handleActionClick(event, 'fav', row.poolId)}
                         >
                     {
-                        (
-                            (this.state.hover[row.poolId] && this.state.hover[row.poolId]['fav']) 
-                            || 
-                            (this.state.checked[row.poolId] && this.state.checked[row.poolId]['fav'])
-                        ) ?
-                        <BsStarFill color="#4e4376" fontSize="1.5em"
-                            onMouseEnter={event => this.toggleHover(event, 'fav', row.poolId, true)}
-                            onMouseLeave={event => this.toggleHover(event, 'fav', row.poolId, false)}
-                        /> :
-                        <BsStar color="#4e4376" fontSize="1.5em"
-                            onMouseEnter={event => this.toggleHover(event, 'fav', row.poolId, true)}
-                            onMouseLeave={event => this.toggleHover(event, 'fav', row.poolId, false)}
-                        />
+                        (this.state.checked[row.poolId] && this.state.checked[row.poolId]['fav']) ?
+                        <BsStarFill color="#4e4376" fontSize="1.5em"/> :
+                        <BsStar color="#4e4376" fontSize="1.5em"/>
                     }
                         </Button>
                     </OverlayTrigger>
@@ -294,19 +273,9 @@ class MainTable extends React.Component {
                             onClick={event => this.handleActionClick(event, 'del', row.poolId)}
                         >
                     {
-                        (
-                            (this.state.hover[row.poolId] && this.state.hover[row.poolId]['del']) 
-                            || 
-                            (this.state.checked[row.poolId] && this.state.checked[row.poolId]['del'])
-                        ) ?
-                        <BsXCircleFill color="#4e4376" fontSize="1.5em"
-                            onMouseEnter={event => this.toggleHover(event, 'del', row.poolId, true)}
-                            onMouseLeave={event => this.toggleHover(event, 'del', row.poolId, false)}
-                        /> :
-                        <BsXCircle color="#4e4376" fontSize="1.5em"
-                            onMouseEnter={event => this.toggleHover(event, 'del', row.poolId, true)}
-                            onMouseLeave={event => this.toggleHover(event, 'del', row.poolId, false)}
-                        />
+                        (this.state.checked[row.poolId] && this.state.checked[row.poolId]['del']) ?
+                        <BsXCircleFill color="#4e4376" fontSize="1.5em"/> :
+                        <BsXCircle color="#4e4376" fontSize="1.5em"/>
                     }
                         </Button>
                     </OverlayTrigger>

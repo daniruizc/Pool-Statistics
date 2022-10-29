@@ -50,7 +50,7 @@ class MainTable extends React.Component {
             let response, allPools, whitelistData, whitelistPools, blacklistData, blacklistPools;
 
             // Fetch whitelisted pools
-            response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/pools/whitelisted/${this.props.address}`, {
+            response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/pools/whitelisted`, {
                 headers: { 'signature': this.props.signature },
             });
 
@@ -63,7 +63,7 @@ class MainTable extends React.Component {
             }
 
             // Fetch blacklisted pools
-            response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/pools/blacklisted/${this.props.address}`, {
+            response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/pools/blacklisted`, {
                 headers: { 'signature': this.props.signature },
             });
 
